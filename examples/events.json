@@ -1,0 +1,11 @@
+[
+  { "tick": 0, "id": "boot-rtr", "type": "router-port-add", "port": "ge-0/0/0" },
+  { "tick": 1, "id": "host1-join", "type": "report", "port": "ge-0/0/1", "group": "ff3e::100", "mode": "include", "sources": ["2001:db8::1"] },
+  { "tick": 2, "id": "host2-join", "type": "report", "port": "ge-0/0/2", "group": "ff3e::100", "mode": "exclude", "sources": [] },
+  { "tick": 3, "id": "host1-leave", "type": "done", "port": "ge-0/0/1", "group": "ff3e::100", "sources": ["2001:db8::1"] },
+  { "tick": 4, "id": "host1-rejoin", "type": "report", "port": "ge-0/0/1", "group": "ff3e::100", "mode": "include", "sources": ["2001:db8::1"] },
+  { "tick": 5, "id": "rtr-move-out", "type": "router-port-del", "port": "ge-0/0/0" },
+  { "tick": 5, "id": "rtr-move-in", "type": "router-port-add", "port": "ge-0/0/9" },
+  { "tick": 6, "id": "restart-1", "type": "restart" },
+  { "tick": 8, "id": "host2-down", "type": "port-down", "port": "ge-0/0/2" }
+]
